@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">Polls</string>
+    <string name="element_text">String</string>
+    <string name="femi_30">Femi_30</string>
+    <string name="email">ogunk@gmail.com</string>
+    <string name="admin">Admin</string>
+    <string name="profile_img">profile_img</string>
+    <string name="title_activity_main2">MainActivity2</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="go_to_polls">go to polls</string>
+    <string name="create_poll">create poll</string>
+    <string name="submit">submit</string>
+</resources>

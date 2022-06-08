@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="20dp">
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:contentDescription="@string/profile_img"
+        android:src="@color/purple_200"
+        android:layout_weight="0.2"
+        />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_weight="1"
+        android:padding="5dp">
+    <TextView
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="@string/femi_30"
+        android:textColor="@color/black"
+        />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="2dp"
+        android:text="@string/email"
+        android:textColor="@color/black"
+        />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/admin"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/admin"
+        android:textColor="@color/black"
+        android:layout_weight="0.2"/>
+
+</LinearLayout>
+
+</androidx.cardview.widget.CardView>
