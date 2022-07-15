@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="../../../../layout/custom_preview.xml" value="0.1421875" />
+        <entry key="app/src/main/res/drawable/ballot_icon.xml" value="0.2215" />
         <entry key="app/src/main/res/drawable/down_vote_foreground.xml" value="0.1735" />
         <entry key="app/src/main/res/drawable/up_vote.xml" value="0.1735" />
         <entry key="app/src/main/res/layout/activity_add_users.xml" value="0.29791666666666666" />
@@ -19,7 +20,7 @@
         <entry key="app/src/main/res/layout/main_content.xml" value="0.13148148148148148" />
         <entry key="app/src/main/res/layout/main_poll.xml" value="0.29791666666666666" />
         <entry key="app/src/main/res/layout/poll_content.xml" value="0.29791666666666666" />
-        <entry key="app/src/main/res/layout/poll_item_design.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/poll_item_design.xml" value="0.375" />
         <entry key="app/src/main/res/layout/text_row_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/vote_page.xml" value="0.375" />
         <entry key="app/src/main/res/mipmap-anydpi-v26/up_vote.xml" value="0.1565" />

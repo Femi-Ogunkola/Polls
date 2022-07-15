@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -46,7 +47,7 @@ public class VotePage extends AppCompatActivity {
         duration.setText(intent.getStringExtra("duration"));
 
 
-        ImageButton upVote = findViewById(R.id.positive_button);
+        ImageView upVote = findViewById(R.id.positive_button);
         upVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -54,7 +55,7 @@ public class VotePage extends AppCompatActivity {
             }
         });
 
-        ImageButton downVote = findViewById(R.id.negative_button);
+        ImageView downVote = findViewById(R.id.negative_button);
         downVote.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

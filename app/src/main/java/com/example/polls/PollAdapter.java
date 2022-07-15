@@ -4,12 +4,18 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class PollAdapter extends RecyclerView.Adapter<PollAdapter.ViewHolder> {
 
@@ -42,8 +48,6 @@ public class PollAdapter extends RecyclerView.Adapter<PollAdapter.ViewHolder> {
         Boolean is_active = list.get(position).isIs_active();
         int authorId = list.get(position).getAuthor_id();
 
-
-
         holder.setData(id,created_date,updated_date,poll_title,poll_description,positive_vote_count,negative_vote_count,duration,is_active,authorId);
     }
 
@@ -56,7 +60,7 @@ public class PollAdapter extends RecyclerView.Adapter<PollAdapter.ViewHolder> {
         this.list = user;
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         private final TextView textView;
         private final TextView textView2;
@@ -71,6 +75,34 @@ public class PollAdapter extends RecyclerView.Adapter<PollAdapter.ViewHolder> {
             count=itemView.findViewById(R.id.count);
             itemView.setOnClickListener(this);
             this.onPollListener = onPollListener;
+
+
+
+        }
+        private void removeAt(int position) {
+
+            String id = list.get(position).getId();
+            RetrofitAPI apiService = ApiClient.getClient().create(RetrofitAPI.class);
+
+            Call<String> call = apiService.deletePoll(Integer.parseInt(id));
+
+            // on below line we are executing our method.
+            call.enqueue(new Callback<String>()  {
+                @Override
+                public void onResponse(Call<String> call, Response<String> response) {
+                    list.remove(position);
+                    notifyItemRemoved(position);
+                    notifyItemRangeChanged(position, list.size());
+                }
+
+                @Override
+                public void onFailure(Call<String> call, Throwable t) {
+                    // setting text to our text view when
+                    // we get error response from API.
+                    Log.d("TAG","Error found is : " + t.getMessage());
+                }
+            });
+
         }
 
         public void setData(String id,String created_date,String updated_date,String poll_title,String poll_description,int positive_vote_count,int negative_vote_count,Integer duration,Boolean is_active,int authorId) {

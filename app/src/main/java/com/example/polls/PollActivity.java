@@ -32,10 +32,6 @@ public class PollActivity extends AppCompatActivity implements PollAdapter.onPol
         setContentView(R.layout.poll_content);
         getData();
 
-        ActionBar actionBar = getSupportActionBar();
-        actionBar.setDisplayHomeAsUpEnabled(true);
-        actionBar.setHomeButtonEnabled(true);
-
         FloatingActionButton create_poll = findViewById(R.id.create_user);
         create_poll.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -59,17 +55,6 @@ public class PollActivity extends AppCompatActivity implements PollAdapter.onPol
         startActivity(intent);
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case android.R.id.home:
-                // app icon in action bar clicked; goto parent activity.
-                this.finish();
-                return true;
-            default:
-                return super.onOptionsItemSelected(item);
-        }
-    }
 
     private void getData() {
         recyclerView = findViewById(R.id.pollrecyclerview);

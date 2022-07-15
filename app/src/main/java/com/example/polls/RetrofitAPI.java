@@ -44,5 +44,9 @@ public interface RetrofitAPI {
             @Query("duration") int duration,
             @Query("is_active") Boolean admin);
 
+    @POST("/delete_poll")
+        //db=db, duration=100, pollTitle="test", pollDescription="test", positive_vote_count=1, negative_vote_count=1, is_active=True, author_id=1)
+    Call<String> deletePoll(@Query("poll_id") int id);
+
 
 }
